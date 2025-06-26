@@ -1,0 +1,186 @@
+[
+  {
+    "Id": 1,
+    "name": "Product Launch",
+    "description": "Landing page for our new product launch campaign",
+    "slug": "product-launch",
+    "isPublished": true,
+    "views": 1250,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-20T14:30:00Z",
+    "settings": {
+      "metaTitle": "Revolutionary Product Launch - Get Early Access",
+      "metaDescription": "Be the first to experience our groundbreaking new product. Sign up for early access today.",
+      "favicon": "",
+      "customCSS": ""
+    },
+    "sections": [
+      {
+        "id": "section-1705310400000",
+        "type": "hero",
+        "name": "Hero Section",
+        "order": 0,
+        "content": {
+          "title": "Introducing the Future",
+          "subtitle": "Revolutionary technology that changes everything you know about productivity",
+          "buttonText": "Get Early Access",
+          "buttonLink": "#signup",
+          "backgroundImage": "",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "section-1705310460000",
+        "type": "features",
+        "name": "Key Features",
+        "order": 1,
+        "content": {
+          "title": "Why Choose Our Product",
+          "features": [
+            {
+              "title": "Lightning Fast",
+              "description": "10x faster than traditional solutions",
+              "icon": "Zap"
+            },
+            {
+              "title": "Secure by Design",
+              "description": "Enterprise-grade security built-in",
+              "icon": "Shield"
+            },
+            {
+              "title": "Easy Integration",
+              "description": "Seamlessly integrates with your existing tools",
+              "icon": "Plug"
+            }
+          ]
+        }
+      },
+      {
+        "id": "section-1705310520000",
+        "type": "testimonial",
+        "name": "Customer Testimonial",
+        "order": 2,
+        "content": {
+          "quote": "This product completely transformed how we work. The efficiency gains are remarkable.",
+          "author": "Sarah Johnson",
+          "title": "CTO, TechCorp",
+          "image": ""
+        }
+      },
+      {
+        "id": "section-1705310580000",
+        "type": "cta",
+        "name": "Call to Action",
+        "order": 3,
+        "content": {
+          "title": "Ready to Transform Your Workflow?",
+          "subtitle": "Join thousands of professionals who have already made the switch",
+          "buttonText": "Start Free Trial",
+          "buttonLink": "#trial"
+        }
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "name": "Service Landing",
+    "description": "Professional services landing page",
+    "slug": "professional-services",
+    "isPublished": false,
+    "views": 0,
+    "createdAt": "2024-01-22T09:15:00Z",
+    "updatedAt": "2024-01-22T09:15:00Z",
+    "settings": {
+      "metaTitle": "Professional Services - Expert Solutions",
+      "metaDescription": "Get expert professional services tailored to your business needs.",
+      "favicon": "",
+      "customCSS": ""
+    },
+    "sections": [
+      {
+        "id": "section-1705914900000",
+        "type": "hero",
+        "name": "Hero Section",
+        "order": 0,
+        "content": {
+          "title": "Expert Professional Services",
+          "subtitle": "Tailored solutions for your business challenges",
+          "buttonText": "Get Consultation",
+          "buttonLink": "#contact",
+          "backgroundImage": "",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "section-1705914960000",
+        "type": "features",
+        "name": "Our Services",
+        "order": 1,
+        "content": {
+          "title": "What We Offer",
+          "features": [
+            {
+              "title": "Strategy Consulting",
+              "description": "Strategic planning and business development",
+              "icon": "Target"
+            },
+            {
+              "title": "Digital Transformation",
+              "description": "Modernize your business processes",
+              "icon": "Smartphone"
+            },
+            {
+              "title": "Performance Optimization",
+              "description": "Improve efficiency and reduce costs",
+              "icon": "TrendingUp"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "name": "Event Registration",
+    "description": "Landing page for upcoming conference",
+    "slug": "tech-conference-2024",
+    "isPublished": true,
+    "views": 850,
+    "createdAt": "2024-01-25T16:30:00Z",
+    "updatedAt": "2024-01-26T11:45:00Z",
+    "settings": {
+      "metaTitle": "Tech Conference 2024 - Register Now",
+      "metaDescription": "Join industry leaders at the premier technology conference. Early bird pricing available.",
+      "favicon": "",
+      "customCSS": ""
+    },
+    "sections": [
+      {
+        "id": "section-1706202600000",
+        "type": "hero",
+        "name": "Event Hero",
+        "order": 0,
+        "content": {
+          "title": "Tech Conference 2024",
+          "subtitle": "March 15-17 | San Francisco | Join 2000+ attendees",
+          "buttonText": "Register Now",
+          "buttonLink": "#register",
+          "backgroundImage": "",
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "section-1706202660000",
+        "type": "cta",
+        "name": "Registration CTA",
+        "order": 1,
+        "content": {
+          "title": "Early Bird Special Ends Soon",
+          "subtitle": "Save $200 on your conference ticket - limited time offer",
+          "buttonText": "Secure Your Spot",
+          "buttonLink": "#register"
+        }
+      }
+    ]
+  }
+]

@@ -8,6 +8,7 @@ import Campaigns from "@/components/pages/Campaigns";
 import SMS from "@/components/pages/SMS";
 import SocialMedia from "@/components/pages/SocialMedia";
 import Calendar from "@/components/pages/Calendar";
+import LandingPages from "@/components/pages/LandingPages";
 export const routes = {
   dashboard: {
     id: 'dashboard',
@@ -65,12 +66,19 @@ socialMedia: {
     icon: 'Share',
     component: SocialMedia
   },
-  calendar: {
+calendar: {
     id: 'calendar',
     label: 'Calendar',
     path: '/calendar',
     icon: 'Calendar',
     component: Calendar
+  },
+  landingPages: {
+    id: 'landingPages',
+    label: 'Landing Pages',
+    path: '/landing-pages',
+    icon: 'Globe',
+    component: LandingPages
   }
 };
 

@@ -1,0 +1,250 @@
+[
+  {
+    "Id": 1,
+    "type": "hero",
+    "name": "Hero Section",
+    "description": "Large banner with title, subtitle and call-to-action",
+    "icon": "Layout",
+    "category": "headers",
+    "template": {
+      "content": {
+        "title": "Your Amazing Headline",
+        "subtitle": "Compelling subtitle that explains your value proposition",
+        "buttonText": "Get Started",
+        "buttonLink": "#",
+        "backgroundImage": "",
+        "textAlign": "center"
+      },
+      "style": {
+        "backgroundColor": "#3b82f6",
+        "textColor": "#ffffff",
+        "padding": "5rem 1.5rem"
+      }
+    }
+  },
+  {
+    "Id": 2,
+    "type": "features",
+    "name": "Features Grid",
+    "description": "Grid layout showcasing key features or benefits",
+    "icon": "Grid3x3",
+    "category": "content",
+    "template": {
+      "content": {
+        "title": "Amazing Features",
+        "subtitle": "Everything you need to succeed",
+        "features": [
+          {
+            "title": "Feature One",
+            "description": "Description of the first amazing feature",
+            "icon": "Star"
+          },
+          {
+            "title": "Feature Two", 
+            "description": "Description of the second amazing feature",
+            "icon": "Heart"
+          },
+          {
+            "title": "Feature Three",
+            "description": "Description of the third amazing feature",
+            "icon": "Shield"
+          }
+        ]
+      },
+      "style": {
+        "backgroundColor": "#ffffff",
+        "padding": "4rem 1.5rem"
+      }
+    }
+  },
+  {
+    "Id": 3,
+    "type": "testimonial",
+    "name": "Testimonial",
+    "description": "Customer testimonial with quote and author",
+    "icon": "Quote",
+    "category": "social-proof",
+    "template": {
+      "content": {
+        "quote": "This product completely changed how we work. Highly recommended!",
+        "author": "John Smith",
+        "title": "CEO, Example Company",
+        "image": "",
+        "rating": 5
+      },
+      "style": {
+        "backgroundColor": "#f8fafc",
+        "padding": "4rem 1.5rem"
+      }
+    }
+  },
+  {
+    "Id": 4,
+    "type": "cta",
+    "name": "Call to Action",
+    "description": "Compelling call-to-action section",
+    "icon": "ArrowRight",
+    "category": "conversion",
+    "template": {
+      "content": {
+        "title": "Ready to Get Started?",
+        "subtitle": "Join thousands of satisfied customers today",
+        "buttonText": "Start Free Trial",
+        "buttonLink": "#",
+        "secondaryButtonText": "Learn More",
+        "secondaryButtonLink": "#"
+      },
+      "style": {
+        "backgroundColor": "#1f2937",
+        "textColor": "#ffffff",
+        "padding": "4rem 1.5rem"
+      }
+    }
+  },
+  {
+    "Id": 5,
+    "type": "content",
+    "name": "Content Block",
+    "description": "Rich text content section",
+    "icon": "FileText",
+    "category": "content",
+    "template": {
+      "content": {
+        "title": "About Our Solution",
+        "subtitle": "Learn more about what makes us different",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        "image": "",
+        "imagePosition": "right"
+      },
+      "style": {
+        "backgroundColor": "#ffffff",
+        "padding": "4rem 1.5rem"
+      }
+    }
+  },
+  {
+    "Id": 6,
+    "type": "gallery",
+    "name": "Image Gallery",
+    "description": "Showcase images in a grid layout",
+    "icon": "Images",
+    "category": "media",
+    "template": {
+      "content": {
+        "title": "Gallery",
+        "subtitle": "Take a look at our work",
+        "images": [
+          {
+            "src": "https://via.placeholder.com/400x300",
+            "alt": "Gallery image 1",
+            "caption": "Image caption 1"
+          },
+          {
+            "src": "https://via.placeholder.com/400x300",
+            "alt": "Gallery image 2", 
+            "caption": "Image caption 2"
+          },
+          {
+            "src": "https://via.placeholder.com/400x300",
+            "alt": "Gallery image 3",
+            "caption": "Image caption 3"
+          }
+        ]
+      },
+      "style": {
+        "backgroundColor": "#ffffff",
+        "padding": "4rem 1.5rem"
+      }
+    }
+  },
+  {
+    "Id": 7,
+    "type": "pricing",
+    "name": "Pricing Table",
+    "description": "Display pricing plans and features",
+    "icon": "DollarSign",
+    "category": "conversion",
+    "template": {
+      "content": {
+        "title": "Choose Your Plan",
+        "subtitle": "Select the perfect plan for your needs",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": "$9",
+            "period": "/month",
+            "features": ["Feature 1", "Feature 2", "Feature 3"],
+            "buttonText": "Get Started",
+            "highlighted": false
+          },
+          {
+            "name": "Pro",
+            "price": "$29",
+            "period": "/month", 
+            "features": ["Everything in Basic", "Feature 4", "Feature 5", "Priority Support"],
+            "buttonText": "Get Started",
+            "highlighted": true
+          },
+          {
+            "name": "Enterprise",
+            "price": "$99",
+            "period": "/month",
+            "features": ["Everything in Pro", "Custom Integration", "Dedicated Account Manager"],
+            "buttonText": "Contact Sales",
+            "highlighted": false
+          }
+        ]
+      },
+      "style": {
+        "backgroundColor": "#f8fafc",
+        "padding": "4rem 1.5rem"
+      }
+    }
+  },
+  {
+    "Id": 8,
+    "type": "contact",
+    "name": "Contact Form",
+    "description": "Contact form with fields for leads",
+    "icon": "Mail",
+    "category": "forms",
+    "template": {
+      "content": {
+        "title": "Get In Touch",
+        "subtitle": "We'd love to hear from you",
+        "fields": [
+          {
+            "type": "text",
+            "name": "name",
+            "label": "Full Name",
+            "required": true
+          },
+          {
+            "type": "email", 
+            "name": "email",
+            "label": "Email Address",
+            "required": true
+          },
+          {
+            "type": "text",
+            "name": "company",
+            "label": "Company",
+            "required": false
+          },
+          {
+            "type": "textarea",
+            "name": "message",
+            "label": "Message",
+            "required": true
+          }
+        ],
+        "buttonText": "Send Message",
+        "successMessage": "Thank you! We'll be in touch soon."
+      },
+      "style": {
+        "backgroundColor": "#ffffff",
+        "padding": "4rem 1.5rem"
+      }
+    }
+  }
+]
