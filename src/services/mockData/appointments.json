@@ -1,0 +1,80 @@
+[
+  {
+    "Id": 1,
+    "title": "Client Consultation - Smith Corp",
+    "start": "2024-01-15T10:00:00",
+    "end": "2024-01-15T11:30:00",
+    "type": "consultation",
+    "status": "confirmed",
+    "contactId": 1,
+    "contactName": "John Smith",
+    "description": "Initial consultation meeting to discuss CRM implementation requirements",
+    "location": "Conference Room A",
+    "attendees": ["john.smith@smithcorp.com", "sales@flowhub.com"]
+  },
+  {
+    "Id": 2,
+    "title": "Product Demo - TechStart Inc",
+    "start": "2024-01-15T14:00:00",
+    "end": "2024-01-15T15:00:00",
+    "type": "demo",
+    "status": "confirmed",
+    "contactId": 2,
+    "contactName": "Sarah Johnson",
+    "description": "Live product demonstration of FlowHub CRM features",
+    "location": "Virtual Meeting",
+    "attendees": ["sarah.j@techstart.com", "demo@flowhub.com"]
+  },
+  {
+    "Id": 3,
+    "title": "Follow-up Call - Martinez Solutions",
+    "start": "2024-01-16T09:30:00",
+    "end": "2024-01-16T10:00:00",
+    "type": "call",
+    "status": "pending",
+    "contactId": 3,
+    "contactName": "Carlos Martinez",
+    "description": "Follow-up discussion on proposal and next steps",
+    "location": "Phone Call",
+    "attendees": ["carlos@martinez-solutions.com"]
+  },
+  {
+    "Id": 4,
+    "title": "Team Training Session",
+    "start": "2024-01-17T13:00:00",
+    "end": "2024-01-17T16:00:00",
+    "type": "training",
+    "status": "confirmed",
+    "contactId": null,
+    "contactName": "Internal Team",
+    "description": "Weekly team training on new CRM features and best practices",
+    "location": "Training Room B",
+    "attendees": ["team@flowhub.com"]
+  },
+  {
+    "Id": 5,
+    "title": "Contract Review - Global Enterprises",
+    "start": "2024-01-18T11:00:00",
+    "end": "2024-01-18T12:30:00",
+    "type": "meeting",
+    "status": "confirmed",
+    "contactId": 4,
+    "contactName": "Jennifer Wilson",
+    "description": "Final contract review and signing ceremony",
+    "location": "Client Office",
+    "attendees": ["j.wilson@globalent.com", "legal@flowhub.com", "sales@flowhub.com"]
+  },
+  {
+    "Id": 6,
+    "title": "Quarterly Review - DataFlow Corp",
+    "start": "2024-01-19T15:30:00",
+    "end": "2024-01-19T17:00:00",
+    "type": "review",
+    "status": "confirmed",
+    "contactId": 5,
+    "contactName": "Michael Chen",
+    "description": "Quarterly business review and performance analysis",
+    "location": "Virtual Meeting",
+    "attendees": ["m.chen@dataflow.com", "account@flowhub.com"]
+  }
+]

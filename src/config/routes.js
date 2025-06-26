@@ -7,6 +7,7 @@ import Forms from "@/components/pages/Forms";
 import Campaigns from "@/components/pages/Campaigns";
 import SMS from "@/components/pages/SMS";
 import SocialMedia from "@/components/pages/SocialMedia";
+import Calendar from "@/components/pages/Calendar";
 export const routes = {
   dashboard: {
     id: 'dashboard',
@@ -57,12 +58,19 @@ sms: {
     icon: 'MessageSquare',
     component: SMS
   },
-  socialMedia: {
+socialMedia: {
     id: 'socialMedia',
     label: 'Social Media',
     path: '/social-media',
     icon: 'Share',
     component: SocialMedia
+  },
+  calendar: {
+    id: 'calendar',
+    label: 'Calendar',
+    path: '/calendar',
+    icon: 'Calendar',
+    component: Calendar
   }
 };
 
