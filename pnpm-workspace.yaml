@@ -1,0 +1,13 @@
+packages:
+  - '.'
+
+# Temporarily disable strict peer dependency checking
+# This resolves ERR_PNPM_PEER_DEP_ISSUES while dependencies are being updated
+strictPeerDependencies: false
+
+# Optional: Configure hoisting behavior for better dependency management
+hoist-pattern:
+  - '*'
+
+# Optional: Configure shamefully-hoist for legacy compatibility if needed
+# shamefully-hoist: true
