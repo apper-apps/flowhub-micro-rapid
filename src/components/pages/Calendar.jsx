@@ -7,9 +7,8 @@ import Card from '@/components/atoms/Card';
 import Button from '@/components/atoms/Button';
 import Input from '@/components/atoms/Input';
 import ApperIcon from '@/components/ApperIcon';
-import appointmentService from '@/services/api/appointmentService';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-
+import appointmentService from '@/services/api/appointmentService'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 const localizer = momentLocalizer(moment);
 
 const Calendar = () => {
