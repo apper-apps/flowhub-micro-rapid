@@ -1,0 +1,81 @@
+[
+  {
+    "Id": 1,
+    "name": "Contact Us Form",
+    "fields": [
+      {"type": "text", "name": "name", "label": "Full Name", "required": true},
+      {"type": "email", "name": "email", "label": "Email Address", "required": true},
+      {"type": "tel", "name": "phone", "label": "Phone Number", "required": false},
+      {"type": "select", "name": "interest", "label": "Area of Interest", "options": ["Sales", "Support", "Partnership"], "required": true},
+      {"type": "textarea", "name": "message", "label": "Message", "required": true}
+    ],
+    "submissions": 145,
+    "conversionRate": 12.4,
+    "views": 1169,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "status": "Published"
+  },
+  {
+    "Id": 2,
+    "name": "Demo Request Form",
+    "fields": [
+      {"type": "text", "name": "firstName", "label": "First Name", "required": true},
+      {"type": "text", "name": "lastName", "label": "Last Name", "required": true},
+      {"type": "email", "name": "email", "label": "Work Email", "required": true},
+      {"type": "text", "name": "company", "label": "Company Name", "required": true},
+      {"type": "select", "name": "companySize", "label": "Company Size", "options": ["1-10", "11-50", "51-200", "201-1000", "1000+"], "required": true},
+      {"type": "datetime-local", "name": "preferredTime", "label": "Preferred Demo Time", "required": true}
+    ],
+    "submissions": 67,
+    "conversionRate": 18.9,
+    "views": 354,
+    "createdAt": "2023-12-28T14:30:00Z",
+    "status": "Published"
+  },
+  {
+    "Id": 3,
+    "name": "Newsletter Signup",
+    "fields": [
+      {"type": "email", "name": "email", "label": "Email Address", "required": true},
+      {"type": "checkbox", "name": "interests", "label": "Interests", "options": ["Marketing Tips", "Product Updates", "Industry News", "Case Studies"], "required": false}
+    ],
+    "submissions": 289,
+    "conversionRate": 24.1,
+    "views": 1199,
+    "createdAt": "2023-12-20T09:15:00Z",
+    "status": "Published"
+  },
+  {
+    "Id": 4,
+    "name": "Event Registration",
+    "fields": [
+      {"type": "text", "name": "fullName", "label": "Full Name", "required": true},
+      {"type": "email", "name": "email", "label": "Email Address", "required": true},
+      {"type": "text", "name": "jobTitle", "label": "Job Title", "required": true},
+      {"type": "text", "name": "company", "label": "Company", "required": true},
+      {"type": "select", "name": "dietaryRestrictions", "label": "Dietary Restrictions", "options": ["None", "Vegetarian", "Vegan", "Gluten-free", "Other"], "required": false},
+      {"type": "textarea", "name": "questions", "label": "Questions for Speakers", "required": false}
+    ],
+    "submissions": 23,
+    "conversionRate": 8.7,
+    "views": 264,
+    "createdAt": "2024-01-05T16:45:00Z",
+    "status": "Draft"
+  },
+  {
+    "Id": 5,
+    "name": "Customer Feedback Survey",
+    "fields": [
+      {"type": "email", "name": "email", "label": "Email (Optional)", "required": false},
+      {"type": "select", "name": "rating", "label": "Overall Satisfaction", "options": ["Very Satisfied", "Satisfied", "Neutral", "Dissatisfied", "Very Dissatisfied"], "required": true},
+      {"type": "checkbox", "name": "features", "label": "Which features do you use most?", "options": ["CRM", "Email Campaigns", "Forms", "Automation", "Analytics"], "required": false},
+      {"type": "textarea", "name": "improvements", "label": "What could we improve?", "required": false},
+      {"type": "select", "name": "recommend", "label": "How likely are you to recommend us?", "options": ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"], "required": true}
+    ],
+    "submissions": 94,
+    "conversionRate": 31.2,
+    "views": 301,
+    "createdAt": "2023-12-15T11:20:00Z",
+    "status": "Published"
+  }
+]

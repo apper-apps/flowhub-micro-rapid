@@ -1,0 +1,67 @@
+[
+  {
+    "Id": 1,
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "+1 (555) 123-4567",
+    "stage": "Lead",
+    "score": 85,
+    "tags": ["Enterprise", "Tech", "Hot Lead"],
+    "lastActivity": "2024-01-15T10:30:00Z",
+    "company": "TechCorp Solutions",
+    "position": "Marketing Director",
+    "source": "Website Form"
+  },
+  {
+    "Id": 2,
+    "name": "Michael Chen",
+    "email": "m.chen@innovate.co",
+    "phone": "+1 (555) 234-5678",
+    "stage": "Qualified",
+    "score": 92,
+    "tags": ["SMB", "Software", "Decision Maker"],
+    "lastActivity": "2024-01-14T15:45:00Z",
+    "company": "Innovate Co",
+    "position": "CEO",
+    "source": "LinkedIn Campaign"
+  },
+  {
+    "Id": 3,
+    "name": "Emily Rodriguez",
+    "email": "emily.r@globalfinance.com",
+    "phone": "+1 (555) 345-6789",
+    "stage": "Proposal",
+    "score": 78,
+    "tags": ["Finance", "Enterprise", "Budget Approved"],
+    "lastActivity": "2024-01-13T09:15:00Z",
+    "company": "Global Finance Inc",
+    "position": "Operations Manager",
+    "source": "Referral"
+  },
+  {
+    "Id": 4,
+    "name": "David Thompson",
+    "email": "d.thompson@retailplus.net",
+    "phone": "+1 (555) 456-7890",
+    "stage": "Customer",
+    "score": 95,
+    "tags": ["Retail", "Long-term", "Champion"],
+    "lastActivity": "2024-01-12T14:20:00Z",
+    "company": "RetailPlus Network",
+    "position": "IT Director",
+    "source": "Trade Show"
+  },
+  {
+    "Id": 5,
+    "name": "Lisa Wang",
+    "email": "lisa.wang@healthtech.org",
+    "phone": "+1 (555) 567-8901",
+    "stage": "Lead",
+    "score": 65,
+    "tags": ["Healthcare", "Compliance", "New"],
+    "lastActivity": "2024-01-11T11:30:00Z",
+    "company": "HealthTech Organizations",
+    "position": "Project Manager",
+    "source": "Google Ads"
+  }
+]
