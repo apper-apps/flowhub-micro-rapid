@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { toast } from 'react-toastify';
-import contactService from '@/services/api/contactService';
-import ApperIcon from '@/components/ApperIcon';
-import Card from '@/components/atoms/Card';
-import Badge from '@/components/atoms/Badge';
-import Button from '@/components/atoms/Button';
-import SearchBar from '@/components/molecules/SearchBar';
-import SkeletonLoader from '@/components/molecules/SkeletonLoader';
-import ErrorState from '@/components/molecules/ErrorState';
-import EmptyState from '@/components/molecules/EmptyState';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import contactService from "@/services/api/contactService";
+import ApperIcon from "@/components/ApperIcon";
+import SkeletonLoader from "@/components/molecules/SkeletonLoader";
+import EmptyState from "@/components/molecules/EmptyState";
+import SearchBar from "@/components/molecules/SearchBar";
+import ErrorState from "@/components/molecules/ErrorState";
+import Card from "@/components/atoms/Card";
+import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
 
 const ContactList = ({ onContactSelect }) => {
   const [contacts, setContacts] = useState([]);
@@ -44,12 +44,12 @@ const ContactList = ({ onContactSelect }) => {
     if (!searchTerm) {
       setFilteredContacts(contacts);
       return;
-    }
+}
 
-    const filtered = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.company?.toLowerCase().includes(searchTerm.toLowerCase())
+const filtered = contacts.filter(contact =>
+      (contact.Name || contact.name || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (contact.email || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (contact.company || '').toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredContacts(filtered);
   };
@@ -172,23 +172,24 @@ const ContactList = ({ onContactSelect }) => {
                   onClick={(e) => e.stopPropagation()}
                 />
 
-                <div className="flex-1 min-w-0" onClick={() => handleContactSelect(contact)}>
+<div className="flex-1 min-w-0" onClick={() => handleContactSelect(contact)}>
                   <div className="flex items-start justify-between">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="font-medium text-surface-900 truncate">
-                          {contact.name}
+                          {contact.Name || contact.name}
                         </h3>
                         <Badge variant={getStageColor(contact.stage)} size="sm">
                           {contact.stage}
                         </Badge>
                       </div>
-
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-sm text-surface-600">
-                          <ApperIcon name="Mail" size={14} />
-                          <span className="truncate">{contact.email}</span>
-                        </div>
+<div className="space-y-1">
+                        {contact.email && (
+                          <div className="flex items-center gap-2 text-sm text-surface-600">
+                            <ApperIcon name="Mail" size={14} />
+                            <span className="truncate">{contact.email}</span>
+                          </div>
+                        )}
                         {contact.phone && (
                           <div className="flex items-center gap-2 text-sm text-surface-600">
                             <ApperIcon name="Phone" size={14} />
@@ -220,12 +221,15 @@ const ContactList = ({ onContactSelect }) => {
                     </div>
 
                     <div className="flex flex-col items-end gap-2">
-                      <div className="flex items-center gap-1">
+<div className="flex items-center gap-1">
                         <ApperIcon name="Star" size={14} className="text-yellow-500 fill-current" />
-                        <span className="text-sm font-medium">{contact.score}</span>
+                        <span className="text-sm font-medium">{contact.score || '0'}</span>
                       </div>
                       <div className="text-xs text-surface-500">
-                        {new Date(contact.lastActivity).toLocaleDateString()}
+                        {contact.last_activity || contact.lastActivity 
+                          ? new Date(contact.last_activity || contact.lastActivity).toLocaleDateString()
+                          : 'No activity'
+                        }
                       </div>
                     </div>
                   </div>

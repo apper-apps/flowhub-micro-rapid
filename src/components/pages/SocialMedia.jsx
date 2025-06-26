@@ -53,10 +53,12 @@ const SocialMedia = () => {
     setSearchTerm(term);
   };
 
-  const filteredPosts = posts.filter(post =>
-    post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.platforms.some(platform => platform.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+const filteredPosts = posts.filter(post => {
+    const platforms = post.platforms || [];
+    const platformArray = typeof platforms === 'string' ? platforms.split(',') : platforms;
+    return post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+           platformArray.some(platform => platform.toLowerCase().includes(searchTerm.toLowerCase()));
+  });
 
   const togglePlatform = (platform) => {
     setSelectedPlatforms(prev =>
@@ -117,7 +119,7 @@ const SocialMedia = () => {
     }
 
     try {
-      const postData = {
+const postData = {
         content: postContent,
         platforms: selectedPlatforms,
         media: mediaFiles.map(file => ({ type: file.type, name: file.file.name })),
@@ -622,14 +624,14 @@ const SocialMedia = () => {
                           <Badge variant={getStatusColor(post.status)}>
                             {post.status.charAt(0).toUpperCase() + post.status.slice(1)}
                           </Badge>
-                          <div className="flex items-center gap-1">
-                            {post.platforms.map(platform => (
+<div className="flex items-center gap-1">
+                            {(typeof post.platforms === 'string' ? post.platforms.split(',') : post.platforms || []).map(platform => (
                               <div
                                 key={platform}
-                                className={`w-5 h-5 ${platforms[platform]?.color || 'bg-surface-400'} rounded flex items-center justify-center`}
+                                className={`w-5 h-5 ${platforms[platform.trim()]?.color || 'bg-surface-400'} rounded flex items-center justify-center`}
                               >
                                 <ApperIcon 
-                                  name={platforms[platform]?.icon || 'Share'} 
+                                  name={platforms[platform.trim()]?.icon || 'Share'} 
                                   size={10} 
                                   className="text-white" 
                                 />
@@ -639,17 +641,17 @@ const SocialMedia = () => {
                         </div>
                         <p className="text-surface-900 mb-2 line-clamp-2">{post.content}</p>
                         <div className="flex items-center gap-4 text-sm text-surface-500">
-                          {post.publishedAt && (
-                            <span>Published {formatDate(post.publishedAt)}</span>
+{(post.published_at || post.publishedAt) && (
+                            <span>Published {formatDate(post.published_at || post.publishedAt)}</span>
                           )}
-                          {post.scheduledFor && (
-                            <span>Scheduled for {formatDate(post.scheduledFor)}</span>
+                          {(post.scheduled_for || post.scheduledFor) && (
+                            <span>Scheduled for {formatDate(post.scheduled_for || post.scheduledFor)}</span>
                           )}
-                          {post.engagement && (
+{(post.engagement_likes !== undefined || post.engagement) && (
                             <div className="flex items-center gap-3">
-                              <span>{post.engagement.likes} likes</span>
-                              <span>{post.engagement.comments} comments</span>
-                              <span>{post.engagement.shares} shares</span>
+                              <span>{post.engagement_likes || post.engagement?.likes || 0} likes</span>
+                              <span>{post.engagement_comments || post.engagement?.comments || 0} comments</span>
+                              <span>{post.engagement_shares || post.engagement?.shares || 0} shares</span>
                             </div>
                           )}
                         </div>

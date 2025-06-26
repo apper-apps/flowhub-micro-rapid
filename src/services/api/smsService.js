@@ -1,9 +1,6 @@
-import smsData from '@/services/mockData/smsData.json';
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-let conversations = [...smsData];
-let nextId = Math.max(...conversations.map(c => c.Id)) + 1;
-
-// Mock messages data
+// Mock messages data for demonstration
 const mockMessages = {
   1: [
     { Id: 1, conversationId: 1, content: "Hi, I'm interested in your CRM solution.", sender: "customer", timestamp: "2024-01-15T10:00:00Z" },
@@ -16,11 +13,6 @@ const mockMessages = {
     { Id: 6, conversationId: 2, content: "Hello, I saw your ad online.", sender: "customer", timestamp: "2024-01-15T13:00:00Z" },
     { Id: 7, conversationId: 2, content: "Hi there! Thanks for reaching out. How can I help you today?", sender: "agent", timestamp: "2024-01-15T13:05:00Z" },
     { Id: 8, conversationId: 2, content: "Can we schedule a call for tomorrow?", sender: "customer", timestamp: "2024-01-15T13:45:00Z" }
-  ],
-  3: [
-    { Id: 9, conversationId: 3, content: "The integration is working perfectly now.", sender: "customer", timestamp: "2024-01-15T12:00:00Z" },
-    { Id: 10, conversationId: 3, content: "That's great to hear! Is there anything else you need help with?", sender: "agent", timestamp: "2024-01-15T12:10:00Z" },
-    { Id: 11, conversationId: 3, content: "Perfect! I'll send the documents over.", sender: "customer", timestamp: "2024-01-15T12:20:00Z" }
   ]
 };
 
@@ -29,112 +21,272 @@ let messageNextId = 100;
 const smsService = {
   // Get all conversations
   getAll: async () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve([...conversations]);
-      }, 200);
-    });
+    try {
+      await delay(200);
+      
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
+      const params = {
+        fields: [
+          { field: { Name: "Name" } },
+          { field: { Name: "Tags" } },
+          { field: { Name: "Owner" } },
+          { field: { Name: "customer_name" } },
+          { field: { Name: "phone_number" } },
+          { field: { Name: "last_message" } },
+          { field: { Name: "last_message_time" } },
+          { field: { Name: "unread_count" } },
+          { field: { Name: "status" } }
+        ]
+      };
+      
+      const response = await apperClient.fetchRecords('sms_conversation', params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error(response.message);
+      }
+      
+      return response.data || [];
+    } catch (error) {
+      console.error('Error fetching SMS conversations:', error);
+      throw error;
+    }
   },
 
   // Get conversation by ID
   getById: async (id) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const conversation = conversations.find(c => c.Id === parseInt(id));
-        if (conversation) {
-          resolve({ ...conversation });
-        } else {
-          reject(new Error('Conversation not found'));
-        }
-      }, 200);
-    });
+    try {
+      await delay(200);
+      
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
+      const params = {
+        fields: [
+          { field: { Name: "Name" } },
+          { field: { Name: "Tags" } },
+          { field: { Name: "Owner" } },
+          { field: { Name: "customer_name" } },
+          { field: { Name: "phone_number" } },
+          { field: { Name: "last_message" } },
+          { field: { Name: "last_message_time" } },
+          { field: { Name: "unread_count" } },
+          { field: { Name: "status" } }
+        ]
+      };
+      
+      const response = await apperClient.getRecordById('sms_conversation', parseInt(id), params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error(response.message);
+      }
+      
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching SMS conversation with ID ${id}:`, error);
+      throw error;
+    }
   },
 
   // Create new conversation
   create: async (conversationData) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const newConversation = {
-          Id: nextId++,
-          ...conversationData,
-          lastMessageTime: new Date().toISOString(),
-          unreadCount: 0,
-          status: 'new'
-        };
-        conversations.push(newConversation);
-        resolve({ ...newConversation });
-      }, 300);
-    });
+    try {
+      await delay(300);
+      
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
+      // Only include Updateable fields
+      const params = {
+        records: [
+          {
+            Name: conversationData.Name || `Conversation with ${conversationData.customer_name || conversationData.customerName}`,
+            Tags: conversationData.Tags || '',
+            Owner: conversationData.Owner || '',
+            customer_name: conversationData.customer_name || conversationData.customerName,
+            phone_number: conversationData.phone_number || conversationData.phoneNumber,
+            last_message: conversationData.last_message || conversationData.lastMessage || '',
+            last_message_time: conversationData.last_message_time || conversationData.lastMessageTime || new Date().toISOString(),
+            unread_count: conversationData.unread_count || conversationData.unreadCount || 0,
+            status: conversationData.status || 'new'
+          }
+        ]
+      };
+      
+      const response = await apperClient.createRecord('sms_conversation', params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error(response.message);
+      }
+      
+      if (response.results) {
+        const successfulRecords = response.results.filter(result => result.success);
+        const failedRecords = response.results.filter(result => !result.success);
+        
+        if (failedRecords.length > 0) {
+          console.error(`Failed to create ${failedRecords.length} records:${JSON.stringify(failedRecords)}`);
+          failedRecords.forEach(record => {
+            record.errors?.forEach(error => {
+              throw new Error(`${error.fieldLabel}: ${error.message}`);
+            });
+            if (record.message) throw new Error(record.message);
+          });
+        }
+        
+        return successfulRecords[0]?.data;
+      }
+    } catch (error) {
+      console.error('Error creating SMS conversation:', error);
+      throw error;
+    }
   },
 
   // Update conversation
   update: async (id, updates) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const index = conversations.findIndex(c => c.Id === parseInt(id));
-        if (index !== -1) {
-          conversations[index] = { ...conversations[index], ...updates };
-          resolve({ ...conversations[index] });
-        } else {
-          reject(new Error('Conversation not found'));
+    try {
+      await delay(300);
+      
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
+      // Only include Updateable fields
+      const params = {
+        records: [
+          {
+            Id: parseInt(id),
+            Name: updates.Name,
+            Tags: updates.Tags,
+            Owner: updates.Owner,
+            customer_name: updates.customer_name || updates.customerName,
+            phone_number: updates.phone_number || updates.phoneNumber,
+            last_message: updates.last_message || updates.lastMessage,
+            last_message_time: updates.last_message_time || updates.lastMessageTime,
+            unread_count: updates.unread_count || updates.unreadCount,
+            status: updates.status
+          }
+        ]
+      };
+      
+      const response = await apperClient.updateRecord('sms_conversation', params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error(response.message);
+      }
+      
+      if (response.results) {
+        const successfulUpdates = response.results.filter(result => result.success);
+        const failedUpdates = response.results.filter(result => !result.success);
+        
+        if (failedUpdates.length > 0) {
+          console.error(`Failed to update ${failedUpdates.length} records:${JSON.stringify(failedUpdates)}`);
+          failedUpdates.forEach(record => {
+            record.errors?.forEach(error => {
+              throw new Error(`${error.fieldLabel}: ${error.message}`);
+            });
+            if (record.message) throw new Error(record.message);
+          });
         }
-      }, 300);
-    });
+        
+        return successfulUpdates[0]?.data;
+      }
+    } catch (error) {
+      console.error('Error updating SMS conversation:', error);
+      throw error;
+    }
   },
 
   // Delete conversation
   delete: async (id) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const index = conversations.findIndex(c => c.Id === parseInt(id));
-        if (index !== -1) {
-          const deleted = conversations.splice(index, 1)[0];
-          // Also delete associated messages
-          delete mockMessages[id];
-          resolve({ ...deleted });
-        } else {
-          reject(new Error('Conversation not found'));
+    try {
+      await delay(300);
+      
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
+      const params = {
+        RecordIds: [parseInt(id)]
+      };
+      
+      const response = await apperClient.deleteRecord('sms_conversation', params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error(response.message);
+      }
+      
+      if (response.results) {
+        const failedDeletions = response.results.filter(result => !result.success);
+        
+        if (failedDeletions.length > 0) {
+          console.error(`Failed to delete ${failedDeletions.length} records:${JSON.stringify(failedDeletions)}`);
+          failedDeletions.forEach(record => {
+            if (record.message) throw new Error(record.message);
+          });
         }
-      }, 300);
-    });
+        
+        // Also delete associated messages
+        delete mockMessages[id];
+        return true;
+      }
+    } catch (error) {
+      console.error('Error deleting SMS conversation:', error);
+      throw error;
+    }
   },
 
-  // Get messages for a conversation
+  // Get messages for a conversation (mock for now since message management is separate)
   getMessages: async (conversationId) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const messages = mockMessages[conversationId] || [];
-        resolve([...messages]);
-      }, 200);
-    });
+    await delay(200);
+    const messages = mockMessages[conversationId] || [];
+    return [...messages];
   },
 
-  // Send a message
+  // Send a message (mock for now since message management is separate)
   sendMessage: async (messageData) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const newMessage = {
-          Id: messageNextId++,
-          ...messageData,
-          timestamp: new Date().toISOString()
-        };
-        
-        const conversationId = messageData.conversationId;
-        if (!mockMessages[conversationId]) {
-          mockMessages[conversationId] = [];
-        }
-        mockMessages[conversationId].push(newMessage);
-        
-        // Update conversation's last message
-        const conversationIndex = conversations.findIndex(c => c.Id === conversationId);
-        if (conversationIndex !== -1) {
-          conversations[conversationIndex].lastMessage = messageData.content;
-          conversations[conversationIndex].lastMessageTime = newMessage.timestamp;
-        }
-        
-        resolve({ ...newMessage });
-      }, 300);
-    });
+    await delay(300);
+    const newMessage = {
+      Id: messageNextId++,
+      ...messageData,
+      timestamp: new Date().toISOString()
+    };
+    
+    const conversationId = messageData.conversationId;
+    if (!mockMessages[conversationId]) {
+      mockMessages[conversationId] = [];
+    }
+    mockMessages[conversationId].push(newMessage);
+    
+    // Update conversation's last message via update service
+    try {
+      await smsService.update(conversationId, {
+        last_message: messageData.content,
+        last_message_time: newMessage.timestamp
+      });
+    } catch (error) {
+      console.error('Error updating conversation after sending message:', error);
+    }
+    
+    return { ...newMessage };
   }
 };
 

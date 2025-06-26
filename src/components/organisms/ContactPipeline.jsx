@@ -145,9 +145,9 @@ const ContactPipeline = () => {
                                 }`}
                               >
                                 <div className="space-y-2">
-                                  <div className="flex items-start justify-between">
+<div className="space-y-2">
                                     <h4 className="font-medium text-surface-900 text-sm">
-                                      {contact.name}
+                                      {contact.Name || contact.name}
                                     </h4>
                                     <div className="flex items-center gap-1">
                                       <ApperIcon name="Star" size={12} className="text-yellow-500 fill-current" />
@@ -162,23 +162,23 @@ const ContactPipeline = () => {
                                     )}
                                   </div>
 
-                                  <div className="flex flex-wrap gap-1">
-                                    {contact.tags?.slice(0, 2).map(tag => (
+<div className="flex flex-wrap gap-1">
+                                    {(contact.Tags ? contact.Tags.split(',') : contact.tags || []).slice(0, 2).map(tag => (
                                       <Badge key={tag} variant="primary" size="sm">
-                                        {tag}
+                                        {tag.trim()}
                                       </Badge>
                                     ))}
-                                    {contact.tags?.length > 2 && (
+                                    {(contact.Tags ? contact.Tags.split(',').length : contact.tags?.length || 0) > 2 && (
                                       <Badge variant="default" size="sm">
-                                        +{contact.tags.length - 2}
+                                        +{(contact.Tags ? contact.Tags.split(',').length : contact.tags?.length || 0) - 2}
                                       </Badge>
                                     )}
                                   </div>
 
                                   <div className="flex items-center gap-2 pt-2 border-t border-surface-100">
                                     <ApperIcon name="Clock" size={12} className="text-surface-400" />
-                                    <span className="text-xs text-surface-500">
-                                      {new Date(contact.lastActivity).toLocaleDateString()}
+<span className="text-xs text-surface-500">
+                                      {new Date(contact.last_activity || contact.lastActivity).toLocaleDateString()}
                                     </span>
                                   </div>
                                 </div>
