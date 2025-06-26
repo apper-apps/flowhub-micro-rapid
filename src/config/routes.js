@@ -1,10 +1,11 @@
-import Dashboard from '@/components/pages/Dashboard';
-import Contacts from '@/components/pages/Contacts';
-import Campaigns from '@/components/pages/Campaigns';
-import Forms from '@/components/pages/Forms';
-import Automation from '@/components/pages/Automation';
-import Analytics from '@/components/pages/Analytics';
-
+import React from "react";
+import Contacts from "@/components/pages/Contacts";
+import Dashboard from "@/components/pages/Dashboard";
+import Automation from "@/components/pages/Automation";
+import Analytics from "@/components/pages/Analytics";
+import Forms from "@/components/pages/Forms";
+import Campaigns from "@/components/pages/Campaigns";
+import SMS from "@/components/pages/SMS";
 export const routes = {
   dashboard: {
     id: 'dashboard',
@@ -41,12 +42,19 @@ export const routes = {
     icon: 'Zap',
     component: Automation
   },
-  analytics: {
+analytics: {
     id: 'analytics',
     label: 'Analytics',
     path: '/analytics',
     icon: 'BarChart3',
     component: Analytics
+  },
+  sms: {
+    id: 'sms',
+    label: 'SMS',
+    path: '/sms',
+    icon: 'MessageSquare',
+    component: SMS
   }
 };
 

@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "customerName": "John Smith",
+    "phoneNumber": "+1-555-0123",
+    "lastMessage": "Thanks for the quick response! I'll get back to you soon.",
+    "lastMessageTime": "2024-01-15T14:30:00Z",
+    "unreadCount": 0,
+    "status": "active",
+    "tags": ["lead", "priority"]
+  },
+  {
+    "Id": 2,
+    "customerName": "Sarah Johnson",
+    "phoneNumber": "+1-555-0234",
+    "lastMessage": "Can we schedule a call for tomorrow?",
+    "lastMessageTime": "2024-01-15T13:45:00Z",
+    "unreadCount": 2,
+    "status": "new",
+    "tags": ["prospect"]
+  },
+  {
+    "Id": 3,
+    "customerName": "Mike Davis",
+    "phoneNumber": "+1-555-0345",
+    "lastMessage": "Perfect! I'll send the documents over.",
+    "lastMessageTime": "2024-01-15T12:20:00Z",
+    "unreadCount": 0,
+    "status": "active",
+    "tags": ["customer"]
+  },
+  {
+    "Id": 4,
+    "customerName": "Emily Chen",
+    "phoneNumber": "+1-555-0456",
+    "lastMessage": "Hi, I'm interested in your services. Could you tell me more?",
+    "lastMessageTime": "2024-01-15T11:15:00Z",
+    "unreadCount": 1,
+    "status": "new",
+    "tags": ["lead"]
+  },
+  {
+    "Id": 5,
+    "customerName": "Robert Wilson",
+    "phoneNumber": "+1-555-0567",
+    "lastMessage": "The demo was great. Let's move forward with the proposal.",
+    "lastMessageTime": "2024-01-15T10:30:00Z",
+    "unreadCount": 0,
+    "status": "active",
+    "tags": ["qualified", "hot-lead"]
+  },
+  {
+    "Id": 6,
+    "customerName": "Lisa Anderson",
+    "phoneNumber": "+1-555-0678",
+    "lastMessage": "Thank you for the follow-up. I need to discuss with my team.",
+    "lastMessageTime": "2024-01-14T16:45:00Z",
+    "unreadCount": 0,
+    "status": "pending",
+    "tags": ["prospect"]
+  },
+  {
+    "Id": 7,
+    "customerName": "David Brown",
+    "phoneNumber": "+1-555-0789",
+    "lastMessage": "When can we start the implementation?",
+    "lastMessageTime": "2024-01-14T15:20:00Z",
+    "unreadCount": 3,
+    "status": "customer",
+    "tags": ["customer", "implementation"]
+  },
+  {
+    "Id": 8,
+    "customerName": "Jennifer Taylor",
+    "phoneNumber": "+1-555-0890",
+    "lastMessage": "I have some questions about the pricing structure.",
+    "lastMessageTime": "2024-01-14T14:10:00Z",
+    "unreadCount": 1,
+    "status": "negotiation",
+    "tags": ["prospect", "pricing"]
+  }
+]
