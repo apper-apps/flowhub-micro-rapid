@@ -6,6 +6,7 @@ import Analytics from "@/components/pages/Analytics";
 import Forms from "@/components/pages/Forms";
 import Campaigns from "@/components/pages/Campaigns";
 import SMS from "@/components/pages/SMS";
+import SocialMedia from "@/components/pages/SocialMedia";
 export const routes = {
   dashboard: {
     id: 'dashboard',
@@ -49,12 +50,19 @@ analytics: {
     icon: 'BarChart3',
     component: Analytics
   },
-  sms: {
+sms: {
     id: 'sms',
     label: 'SMS',
     path: '/sms',
     icon: 'MessageSquare',
     component: SMS
+  },
+  socialMedia: {
+    id: 'socialMedia',
+    label: 'Social Media',
+    path: '/social-media',
+    icon: 'Share',
+    component: SocialMedia
   }
 };
 

@@ -1,0 +1,153 @@
+[
+  {
+    "Id": 1,
+    "content": "🚀 Exciting news! We've just launched our new CRM dashboard with enhanced analytics and automation features. See how it can streamline your business operations and boost productivity! #CRM #Productivity #BusinessGrowth",
+    "platforms": ["facebook", "linkedin"],
+    "media": [],
+    "status": "published",
+    "publishedAt": "1/15/2024 10:30:00 AMZ",
+    "scheduledFor": null,
+    "engagement": {
+      "likes": 42,
+      "comments": 8,
+      "shares": 12,
+      "impressions": 1250
+    },
+    "createdAt": "2024-01-15T10:25:00Z",
+    "updatedAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "content": "💡 Pro tip: Did you know that automated email sequences can increase your conversion rates by up to 320%? Our latest campaign automation tools make it easier than ever to nurture your leads. What's your favorite automation strategy?",
+    "platforms": ["twitter", "linkedin"],
+    "media": [],
+    "status": "published",
+    "publishedAt": "2024-01-14T14:15:00Z",
+    "scheduledFor": null,
+    "engagement": {
+      "likes": 28,
+      "comments": 15,
+      "shares": 6,
+      "impressions": 890
+    },
+    "createdAt": "2024-01-14T14:10:00Z",
+    "updatedAt": "2024-01-14T14:15:00Z"
+  },
+  {
+    "Id": 3,
+    "content": "🎯 Customer success story: \"FlowHub CRM helped us increase our lead conversion by 45% in just 3 months!\" - Sarah, Marketing Director at TechCorp. Ready to transform your business? Let's chat! 📈",
+    "platforms": ["facebook", "twitter", "linkedin"],
+    "media": [
+      {
+        "type": "image",
+        "name": "customer-testimonial.jpg"
+      }
+    ],
+    "status": "scheduled",
+    "publishedAt": null,
+    "scheduledFor": "2024-01-16T16:00:00Z",
+    "engagement": {
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "impressions": 0
+    },
+    "createdAt": "2024-01-15T11:45:00Z",
+    "updatedAt": "1/15/2024 11:45:00 AMZ"
+  },
+  {
+    "Id": 4,
+    "content": "📊 Weekly insight: Businesses that use data-driven marketing strategies are 6x more likely to be profitable year-over-year. Our analytics dashboard gives you the insights you need to make informed decisions. What metrics matter most to your business?",
+    "platforms": ["linkedin"],
+    "media": [],
+    "status": "published",
+    "publishedAt": "2024-01-13T09:00:00Z",
+    "scheduledFor": null,
+    "engagement": {
+      "likes": 67,
+      "comments": 23,
+      "shares": 18,
+      "impressions": 2100
+    },
+    "createdAt": "2024-01-13T08:55:00Z",
+    "updatedAt": "2024-01-13T09:00:00Z"
+  },
+  {
+    "Id": 5,
+    "content": "🌟 Team spotlight: Meet our amazing customer success team! They're the heroes behind our 98% customer satisfaction rate. Shoutout to Jessica, Mike, and Amanda for going above and beyond! 👏 #TeamAppreciation #CustomerSuccess",
+    "platforms": ["facebook", "linkedin"],
+    "media": [
+      {
+        "type": "image",
+        "name": "team-photo.jpg"
+      }
+    ],
+    "status": "published",
+    "publishedAt": "2024-01-12T12:30:00Z",
+    "scheduledFor": null,
+    "engagement": {
+      "likes": 89,
+      "comments": 12,
+      "shares": 7,
+      "impressions": 1680
+    },
+    "createdAt": "2024-01-12T12:25:00Z",
+    "updatedAt": "2024-01-12T12:30:00Z"
+  },
+  {
+    "Id": 6,
+    "content": "🔥 Flash sale alert! Get 30% off our Premium CRM plan for the next 48 hours. Perfect time to upgrade and unlock advanced features like custom workflows, detailed analytics, and priority support. Use code GROW30 ⚡",
+    "platforms": ["facebook", "twitter"],
+    "media": [],
+    "status": "published",
+    "publishedAt": "2024-01-11T08:00:00Z",
+    "scheduledFor": null,
+    "engagement": {
+      "likes": 156,
+      "comments": 34,
+      "shares": 45,
+      "impressions": 3200
+    },
+    "createdAt": "2024-01-11T07:55:00Z",
+    "updatedAt": "2024-01-11T08:00:00Z"
+  },
+  {
+    "Id": 7,
+    "content": "📚 New blog post: '10 Essential Email Marketing Best Practices for 2024' - Learn how to craft compelling subject lines, optimize send times, and measure campaign success. Link in bio! 📧✨",
+    "platforms": ["twitter", "linkedin"],
+    "media": [],
+    "status": "scheduled",
+    "publishedAt": null,
+    "scheduledFor": "2024-01-17T11:00:00Z",
+    "engagement": {
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "impressions": 0
+    },
+    "createdAt": "2024-01-15T16:20:00Z",
+    "updatedAt": "2024-01-15T16:20:00Z"
+  },
+  {
+    "Id": 8,
+    "content": "🎉 Milestone celebration! We've just crossed 10,000 active users on our platform. Thank you to our amazing community for trusting us with your business growth. Here's to many more milestones together! 🥳",
+    "platforms": ["facebook", "twitter", "linkedin"],
+    "media": [
+      {
+        "type": "image",
+        "name": "milestone-celebration.jpg"
+      }
+    ],
+    "status": "published",
+    "publishedAt": "2024-01-10T15:45:00Z",
+    "scheduledFor": null,
+    "engagement": {
+      "likes": 234,
+      "comments": 67,
+      "shares": 89,
+      "impressions": 5670
+    },
+    "createdAt": "2024-01-10T15:40:00Z",
+    "updatedAt": "2024-01-10T15:45:00Z"
+  }
+]
